@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="roughstyle.css">
+    <link href="https://fonts.googleapis.com/css2?family=Blinker:wght@100;200;300;400;600;700;800;900&family=Courgette&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kaushan+Script&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Pacifico&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <script>
+        // Typewriter Effect with Faster Blinking Cursor
+        document.addEventListener("DOMContentLoaded", function () {
+            const words = ["Hotels", "Utilities", "Offices", "Residencies", "Industries"];
+            let wordIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+            const typewriterElement = document.getElementById("typewriter");
+            let cursorVisible = true;
+    
+            function typeEffect() {
+                if (!typewriterElement) return;
+    
+                let currentWord = words[wordIndex];
+                let displayText = currentWord.substring(0, charIndex);
+    
+                // Toggle cursor visibility faster (every 300ms)
+                displayText += cursorVisible ? "|" : "";
+    
+                typewriterElement.textContent = displayText;
+    
+                if (!isDeleting && charIndex === currentWord.length) {
+                    setTimeout(() => {
+                        isDeleting = true;
+                        typeEffect();
+                    }, 1200);
+                } else if (isDeleting && charIndex === 0) {
+                    isDeleting = false;
+                    wordIndex = (wordIndex + 1) % words.length;
+                    setTimeout(typeEffect, 300);
+                } else {
+                    setTimeout(typeEffect, isDeleting ? 50 : 100);
+                }
+    
+                charIndex = isDeleting ? charIndex - 1 : charIndex + 1;
+            }
+    
+            function blinkCursor() {
+                cursorVisible = !cursorVisible;
+                setTimeout(blinkCursor, 300); // Faster blinking (300ms)
+            }
+    
+            setTimeout(typeEffect, 500);
+            blinkCursor(); // Start cursor blinking
+        });
+    
+        // Smooth Header Transition Script
+        document.addEventListener("DOMContentLoaded", function () {
+            const header = document.querySelector(".header");
+            const header2 = document.querySelector(".header2");
+            const footer = document.querySelector(".footer");
+    
+            function toggleHeader() {
+                const headerRect = header.getBoundingClientRect();
+                const footerRect = footer.getBoundingClientRect();
+    
+                if (headerRect.bottom < 0 && footerRect.top > window.innerHeight) {
+                    header2.style.opacity = "1";
+                    header2.style.transform = "translateY(0)";
+                    header2.style.visibility = "visible";
+                } else {
+                    header2.style.opacity = "0";
+                    header2.style.transform = "translateY(-20px)";
+                    header2.style.visibility = "hidden";
+                }
+            }
+    
+            window.addEventListener("scroll", toggleHeader);
+        });
+    </script>
+    
+
+    <div class="header">
+        <div class="logo">
+            <a href="index.html"><img src="/Work/images/logocp.png" alt="logo"></a>
+        </div>
+        <div class="nav-bar">
+            <div id="h1" class="hopt"><a href="/Work/About Us/aboutus.html">About Us</a></div>
+            <div id="h2" class="hopt">
+                <a href="/Work/Solutions/build.html">Solutions</a>
+                <div class="dropdown">
+                    <a href="#"><img src="/Work/images/design-icon1.png" alt=""><pre>Design </pre></a>
+                    <a href="#"><img src="/Work/images/build-icon1.png" alt=""> <pre> Build </pre></a>
+                    <a href="#"><img src="/Work/images/operate-icon1.png" alt=""> <pre>Operate</pre></a>
+                </div>
+            </div>            
+            <div id="h3" class="hopt"><a href="/Work/project.html">Projects</a></div>
+            <div id="h4" class="hopt"><a href="/Work/blog.html">News</a></div>
+            <div id="h5" class="hopt"><a href="/Work/contact.html">Contact</a></div>
+        </div>
+    </div>
+    <div class="header2">
+        <div class="nav-bar2">
+            <div id="logoh" class="logo2">
+                <a href="index.html"><img src="/Work/images/Logo2.png" alt="logo"></a>
+            </div>
+            <div id="h1" class="hopt2"><a href="/Work/About Us/aboutus.html"><img src="/Work/images/aboutush.png" alt="About Us"></a></div>
+            <div id="h2" class="hopt2">
+                <a href="/Work/Solutions/build.html"><img src="/Work/images/solutionsh.png" alt="Solutions"></a>
+                <div class="dropdown2">
+                    <a href="#"><img src="/Work/images/designh.png" alt="Design"></a>
+                    <a href="#"><img src="/Work/images/buildh.png" alt="Build"></a>
+                    <a href="#"><img src="/Work/images/operateh.png" alt="Operate"></a>
+                </div>
+            </div>            
+            <div id="h3" class="hopt2"><a href="/Work/project.html"><img src="/Work/images/projectsh.png" alt="Projects"></a></div>
+            <div id="h4" class="hopt2">
+                <a href="/Work/blog.html"><img src="/Work/images/resourcesh.png" alt="Resources"></a>
+                <div class="dropdown21">
+                    <a href="#"><img src="/Work/images/newsh.png" alt="News"></a>
+                    <a href="#"><img src="/Work/images/blogh.png" alt="Blog"></a>
+                </div>
+            </div>
+            <div id="h5" class="hopt2"><a href="/Work/contact.html"><img src="/Work/images/contacth.png" alt="Contact"></a></div>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="main-poster">
+            <img src="/Work/images/green-building.jpg" alt="poster">
+            <div class="content-overlay">
+                <h2>Sustainable Energy Solutions</h2>
+                <h2>Empowering <span id="typewriter"></span></h2>
+                <h2>for a Greener tomorrow.</h2>
+            </div>
+        </div>
+        <div class="sub-poster">
+            <!-- <div class="d1">
+                <img src="/Work/images/d1.png" alt="">
+            </div>
+            <div class="d2">DESIGN</div>
+            <div class="d3">
+                <img src="/Work/images/d2.png" alt="">
+            </div>
+            <div class="d4">Data</div>
+            <div class="d5">
+                <img src="/Work/images/d3.png" alt="">
+            </div>
+            <div class="d6">DECARBONIZE</div>
+            <div class="d7">
+                <img src="/Work/images/d4.png" alt="">
+            </div> -->
+        </div>
+        <div class="solutions">
+            <h2 class="solutions-head">OUR SOLUTIONS</h2>
+            <p class="solutions-para">Prioritizing energy efficiency, sustainability, and green strategies, we integrate eco-friendly materials, advanced cooling systems, and green cover to minimize environmental impact. Leveraging a data-driven Energy Management System (EMS), we optimize energy usage in real time to support building sector decarbonization.</p>
+            <div class="solutions-cards">
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="/Work/images/Design.png" alt="Solution 1 Image" class="card-img">
+                        </div>
+                        <div class="card-back">
+                            <p>We design buildings with a focus on energy efficiency, sustainability, and green strategies, including enhancing green cover to support our mission of decarbonizing the building sector.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="/Work/images/Build.png" alt="Solution 2 Image" class="card-img">
+                        </div>
+                        <div class="card-back">
+                            <p>Elements Energy is enhancing sustainability by proposing eco-friendly materials and integrating advanced green cooling systems, optimizing energy efficiency and minimizing environmental impact throughout the building's lifecycle.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="/Work/images/Operate.png" alt="Solution 3 Image" class="card-img">
+                        </div>
+                        <div class="card-back">
+                            <p>We use a data-driven Energy Management System (EMS) for real-time monitoring and continuous optimization of energy usage.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="impact">
+            <h2 class="impact-head">IMPACT</h2>
+            <div class="impact-banner"> 
+                <div class="banner1">
+                    <h1>700Kg</h1>
+                    <h3>CO<sup>2</sup> Reduction</h3>
+                    <p>With our energy-efficient technology, we significantly reduce carbon dioxide emissions, contributing to a greener and more sustainable environment.</p>
+                </div>
+                <div class="banner2">
+                    <h1>70%</h1>
+                    <h3>Cost Savings</h3>
+                    <p>With implementation of our Advanced EMS, we achieve a significant reduction in energy consumption,optimizing performance, efficiency across the board.</p>
+                </div>
+                <div class="banner3">
+                    <h1>4X</h1>
+                    <h3>Energy Efficiency</h3>
+                    <p>EMS provides continuous monitoring of energy usage, allowing for real-time adjustments and ensuring optimal energy efficiency.</p>
+                </div>
+                <div class="banner4">
+                    <h1>1.2M</h1>
+                    <h3>Building Footprint</h3>
+                    <p>With a larger building footprint, the EMS can manage and optimize a more extensive range of systems which allows for more significant energy savings.</p>
+                </div>
+            </div>
+        </div>
+        <div class="feature">
+            <div class="feature-head">
+                <h2>FEATURED ON</h2>
+            </div>
+            <div class="feature-content">
+                <div id="fcard1" class="fcard">
+                    <div class="container-1">
+                        <div class="fcard-square"></div>
+                        <div class="fcard-head"></div>
+                    </div>
+                    <div class="container-2">
+                        <div class="fcard-pic"></div>
+                        <div class="fcard-content"></div>
+                    </div>
+                </div>
+                <div id="fcard2" class="fcard">
+                    <div class="container-1">
+                        <div class="fcard-square"></div>
+                        <div class="fcard-head"></div>
+                    </div>
+                    <div class="container-2">
+                        <div class="fcard-pic"></div>
+                        <div class="fcard-content"></div>
+                    </div>
+                </div>
+                <div id="fcard3" class="fcard">
+                    <div class="container-1">
+                        <div class="fcard-square"></div>
+                        <div class="fcard-head"></div>
+                    </div>
+                    <div class="container-2">
+                        <div class="fcard-pic"></div>
+                        <div class="fcard-content"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="trusted">
+            <h2>TRUSTED BY</h2>
+            <div class="trust-icons">
+                <div class="trust-logo" id="trust1"><a href=""><img src="/Work/images/Trust1.png" alt="Trust-1"></a></div>
+                <div class="trust-logo" id="trust2"><a href=""><img src="/Work/images/Trust2.png" alt="Trust-2"></a></div>
+                <div class="trust-logo" id="trust3"><a href=""><img src="/Work/images/Trust3.png" alt="Trust-3"></a></div>
+                <div class="trust-logo" id="trust4"><a href=""><img src="/Work/images/Trust4.png" alt="Trust-4"></a></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="foot-logo">
+            <img src="/Work/images/Logo 1.png" alt="logo">
+        </div>
+        <div class="div-blank"></div>
+        <div class="fsection-3">
+            <div class="quick">
+                <h3>Quick Links</h3>
+                <div class="quick-p">
+                    <p><a href="#">About Us</a></p>
+                    <p><a href="#">Solutions</a></p>
+                    <p><a href="#">Projects</a></p>
+                    <p><a href="#">News</a></p>  
+                </div>              
+            </div>
+        </div>
+        <div class="fsection-2">
+            <div class="sub">
+                <h3>Contact Us</h3>
+                <p>+91 12345 67890</p>
+                <p>elementsenergy@info.in</p>
+            </div>
+            <div class="sub">
+                <h3>Address</h3>
+                <p>IIT-Madras Research Park</p>
+                <p>Kanagam Road, Tharamani</p>
+                <p>Chennai, Tamil Nadu</p>
+            </div>
+        </div>
+        <div class="followus">
+            <h3>Follow Us</h3>
+            <div class="social">
+                <div class="insta">
+                    <a href="https://www.instagram.com/elements_energies/""><img src="/Work/images/InstaN.png" alt="insta"></a>
+                </div>
+                <div class="linkedin">
+                    <a href="https://www.linkedin.com/company/elements.energies/posts/?feedView=all"><img src="/Work/images/LinkedinN.png" alt="linedin"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

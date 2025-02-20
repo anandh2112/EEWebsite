@@ -1,0 +1,313 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 70px;
+    background: #ffffff;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+}
+
+/* Logo Styling */
+.logo {
+    /* flex: 1; */
+    padding-left: 90px;
+    padding-right: 40px;
+}
+
+#head-logo {
+    width: 130px;
+}
+
+/* #head-logo:hover {
+    transform: scale(1.1);
+} */
+
+/* Navigation Menu Styling */
+.nav-options {
+    padding-left: 400px;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items:start ;
+}
+
+.nav-options a {
+    text-decoration: none;
+    font-size: 16px;
+    font-family: 'inter', sans-serif;
+    color: #333; /* Adjusted color to match the white background */
+    font-weight: 500;
+    padding: 5px 10px;
+    transition: all 0.3s ease;
+}
+
+.nav-options a:hover {
+    color: #32a852;
+}
+
+/* Dropdown Styling */
+.dropdown {
+    position: relative; /* Required for positioning the dropdown menu */
+}
+.dropdown a{
+    display: flex;
+    justify-content: center;
+}
+
+.dropdown-menu {
+    list-style: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #f2f3f5;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.5s ease, transform 0.5s ease, visibility 0.5s;
+    z-index: 1000;
+}
+
+.dropdown-menu li {
+    padding: 10px 20px;
+    white-space: nowrap;
+}
+
+.dropdown-menu li a {
+    text-decoration: none;
+    font-size: 14px;
+    color: black;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-menu li a:hover {
+    color: #32a852;
+}
+
+/* Show Dropdown on Hover */
+.dropdown:hover .dropdown-menu {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(15px);
+
+}
+
+.dropdown:not(:hover) .dropdown-menu {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+/* Login Button Styling */
+.login {
+    flex: 1;
+    padding-right:90px ;
+    display: flex;
+    justify-content: end;
+}
+
+.login-button {
+    width: 120px;
+    padding: 8px 15px;
+    background-color: #4DA167;
+    color: white;
+    font-size: 14px;
+    border: 2px solid #4DA167;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Arial', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: white;
+    color: #32a852;
+    border: 2px solid #32a852;
+}
+.login-button a{
+    color: inherit;
+    text-decoration: none;
+}
+.login-button:visited{
+    color: inherit;
+}
+
+
+.body{
+    display: flex;
+    justify-content: center;
+}
+.main{
+    max-width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    padding-bottom: 50px;
+}
+.container{
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+}
+.form_container{
+    background-color: #e8ebe0;
+    padding: 30px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-radius: 50px;
+}
+.form_container h1{
+    font-family: "poppins",sans-serif;
+    color: #6abaaf;
+    font-size: 40px;
+    font-weight: 600;
+}
+.form_control,.textarea_control{
+    font-family: "inter",sans-serif;
+}
+.form_control{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: #466876;
+}
+input,textarea{
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: "poppins",sans-serif;
+    letter-spacing: 1px;
+}
+.textarea_control{
+    grid-column: 1 / span 2;
+    color: #466876;
+}
+
+.textarea_control textarea{
+    width: 100%;
+    margin-top: 10px;
+}
+.button_container{
+    display: flex;
+    justify-content: end;
+    margin-top: 10px;
+}
+.button_container button{
+    background-color: #6abaaf;
+    color: white;
+    border-radius: 5px;
+    border: 2px solid #6abaaf;
+    transition: 0.3s;
+    width: 200px;
+    height: 40px;
+}
+.button_container button:hover{
+    border: 2px solid #6abaaf;
+    background-color: white;
+    color: #6abaaf;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+
+
+footer{
+    padding-top: 20px;
+    padding-left: 80px;
+    height: 35vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr .75fr 1fr .75fr;
+    background-color: #e8ebe0;
+}
+.foot-logo{
+    padding-top: 30px;
+    height: 100%;
+    display: flex;
+    align-items: start  ;
+    justify-content: center;
+}
+.foot-logo img{
+    height: 20vh;
+}
+
+.fsection-2,.sub{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.sub{
+    gap: 10px;
+}
+footer h3,footer h2{
+    font-family: "blinker",sans-serif;
+    letter-spacing: 0.5px;
+    color: #6abaaf;
+}
+footer p{
+    color: black;
+}
+.fsection-2{
+    font-family:"Inter",sans-serif;
+}
+.fsection-3{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.quick-p{
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 17px;
+}
+.quick-p a{
+    text-decoration: none;
+    color: inherit;
+    font-family:"Inter",sans-serif;
+}
+.quick-p:visited{
+    color: inherit;
+}
+.followus{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.social{
+    display: flex;
+    gap: 10px;
+}
+.social img{
+    height: 25px;
+}
+.quick a:visited{
+    color: inherit;
+    text-decoration: none;
+}
+
+.hide-header {
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
