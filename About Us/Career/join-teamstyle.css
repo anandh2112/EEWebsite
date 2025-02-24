@@ -35,7 +35,7 @@ header {
 
 /* Navigation Menu Styling */
 .nav-options {
-    padding-left: 400px;
+    padding-left: 520px;
     display: flex;
     gap: 30px;
     justify-content: center;
@@ -53,6 +53,9 @@ header {
 }
 
 .nav-options a:hover {
+    color: #32a852;
+}
+#highlight{
     color: #32a852;
 }
 
