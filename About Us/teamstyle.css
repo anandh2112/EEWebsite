@@ -18,11 +18,8 @@ header {
     transition: all 0.3s ease;
 }
 
-/* Logo Styling */
 .logo {
-    /* flex: 1; */
-    padding-left: 90px;
-    padding-right: 40px;
+    padding-left: 120px;
 }
 
 #head-logo {
@@ -35,27 +32,25 @@ header {
 
 /* Navigation Menu Styling */
 .nav-options {
-    padding-left: 520px;
+    width: 63vw;
     display: flex;
     gap: 30px;
-    justify-content: center;
-    align-items:start ;
+    justify-content: end;
+    align-items:start;
 }
 
 .nav-options a {
     text-decoration: none;
     font-size: 16px;
     font-family: 'inter', sans-serif;
-    color: #333; /* Adjusted color to match the white background */
+    color: black;
     font-weight: 500;
-    padding: 5px 10px;
+    white-space: nowrap;
+    padding: 5px 5px;
     transition: all 0.3s ease;
 }
 
 .nav-options a:hover {
-    color: #32a852;
-}
-#highlight{
     color: #32a852;
 }
 
@@ -116,9 +111,9 @@ header {
 /* Login Button Styling */
 .login {
     flex: 1;
-    padding-right:90px ;
+    padding-left: 45px;
     display: flex;
-    justify-content: end;
+    justify-content: start;
 }
 
 .login-button {
@@ -147,13 +142,12 @@ header {
     color: inherit;
 }
 
-
 .body{
     display: flex;
     justify-content: center;
 }
 .main{
-    max-width: 80%;
+    max-width: 80vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -265,6 +259,7 @@ header {
     /* letter-spacing: 1px; */
     line-height: 30px;
     word-spacing: 2px;
+    text-align: center;
 }
 
 
