@@ -331,12 +331,18 @@ header {
 .qc4-sub-img img{
     height: 40vh;
 }
-#qc4-img1{
-    height: 40vh;
+#qc4-img5{
+    height: 50vh;
     width: 30vw;
 }
-#qc4-img2{
+#qc4-img6{
     width: 10vw;
+}
+#qc4-img8{
+    width: 35vw;
+}
+#qc4-img10{
+    width: 35vw;
 }
 .q-content5{
     width: 86%;
@@ -344,6 +350,7 @@ header {
     flex-direction: column;
 }
 .q-content5 h3{
+    padding-top: 50px;
     padding-bottom: 5px;
     font-family: "inter",sans-serif;
     color: #6abaaf;
@@ -357,6 +364,7 @@ header {
     font-size: 16px;
     line-height: 30px;
     list-style-type: "- ";
+    text-align: justify
 }
 
 

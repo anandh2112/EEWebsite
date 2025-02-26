@@ -7,8 +7,8 @@
 header {
     position: sticky;
     top: 0;
-    width: 100%;
-    height: 70px;
+    width: 100vw;
+    height: 9.59vh;
     background: #ffffff;
     z-index: 1000;
     display: flex;
@@ -19,34 +19,30 @@ header {
 }
 
 .logo {
-    padding-left: 120px;
+    padding-left: 7.8125vw;
 }
 
 #head-logo {
-    width: 130px;
+    height: 13.25vh;
+    width: 8.5vw;
 }
 
-/* #head-logo:hover {
-    transform: scale(1.1);
-} */
-
-/* Navigation Menu Styling */
 .nav-options {
     width: 63vw;
     display: flex;
-    gap: 30px;
+    gap: 3vw;
     justify-content: end;
     align-items:start;
 }
 
 .nav-options a {
     text-decoration: none;
-    font-size: 16px;
+    font-size: 2vh;
     font-family: 'inter', sans-serif;
     color: black;
     font-weight: 500;
     white-space: nowrap;
-    padding: 5px 5px;
+    padding: 1vh .4vw;
     transition: all 0.3s ease;
 }
 
@@ -54,9 +50,8 @@ header {
     color: #32a852;
 }
 
-/* Dropdown Styling */
 .dropdown {
-    position: relative; /* Required for positioning the dropdown menu */
+    position: relative;
 }
 .dropdown a{
     display: flex;
@@ -78,13 +73,13 @@ header {
 }
 
 .dropdown-menu li {
-    padding: 10px 20px;
+    padding: 1vh 1.5vw;
     white-space: nowrap;
 }
 
 .dropdown-menu li a {
     text-decoration: none;
-    font-size: 14px;
+    font-size: 2vh;
     color: black;
     display: block;
     transition: background-color 0.3s ease;
@@ -98,30 +93,30 @@ header {
 .dropdown:hover .dropdown-menu {
     visibility: visible;
     opacity: 1;
-    transform: translateY(15px);
+    transform: translateY(2vh);
 
 }
 
 .dropdown:not(:hover) .dropdown-menu {
     visibility: hidden;
     opacity: 0;
-    transform: translateY(-10px);
+    transform: translateY(-1.5vh);
 }
 
-/* Login Button Styling */
 .login {
     flex: 1;
-    padding-left: 45px;
+    padding-left: 2.5vw;
     display: flex;
     justify-content: start;
 }
 
 .login-button {
-    width: 120px;
-    padding: 8px 15px;
+    width: 8vw;
+    padding: 1vh 1.5vw;
     background-color: #4DA167;
     color: white;
-    font-size: 14px;
+    font-size: 2vh;
+    white-space: nowrap;
     border: 2px solid #4DA167;
     border-radius: 5px;
     cursor: pointer;
@@ -144,7 +139,6 @@ header {
 
 
 .body{
-    padding-top: 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -157,12 +151,11 @@ header {
     margin-bottom: 50px;
     width: 100vw;
     height: 70vh;
-    /* overflow: hidden; */
 }
 
 .main-poster img {
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 70vh;
     object-fit: cover;
 }
 
@@ -171,22 +164,22 @@ header {
     bottom: 0; /* Moves the overlay to the bottom of the container */
     left: 0; /* Aligns the overlay to the left */
     width: 100%;
-    padding: 35px;
-    padding-left: 140px;
+    padding: 2.5vh 1vw;
+    padding-left: 10vw;
     display: flex;
     flex-direction: column; 
     justify-content: flex-end;
     align-items: flex-start;
     color: white;
     font-family: "nunito sans";
-    font-size: 30px;
+    font-size: 4.5vh;
     text-align: left;
 }
 
 .solutions {
     width: 90%;
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 10vh;
+    padding-bottom: 14vh;
     display: flex;
     flex-direction: column;
 }
