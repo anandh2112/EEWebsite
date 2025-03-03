@@ -1,0 +1,456 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 70px;
+    background: #ffffff;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+}
+
+.logo {
+    padding-left: 120px;
+}
+
+#head-logo {
+    width: 130px;
+}
+
+/* Navigation Menu Styling */
+.nav-options {
+    width: 63vw;
+    display: flex;
+    gap: 30px;
+    justify-content: end;
+    align-items:start;
+}
+
+.nav-options a {
+    text-decoration: none;
+    font-size: 16px;
+    font-family: 'inter', sans-serif;
+    color: black;
+    font-weight: 500;
+    white-space: nowrap;
+    padding: 5px 5px;
+    transition: all 0.3s ease;
+}
+
+.nav-options a:hover {
+    color: #32a852;
+}
+#highlight{
+    color: #32a852;
+}
+
+/* Dropdown Styling */
+.dropdown {
+    position: relative; /* Required for positioning the dropdown menu */
+}
+.dropdown a{
+    display: flex;
+    justify-content: center;
+}
+
+.dropdown-menu {
+    list-style: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #f2f3f5;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.5s ease, transform 0.5s ease, visibility 0.5s;
+    z-index: 1000;
+}
+
+.dropdown-menu li {
+    padding: 10px 20px;
+    white-space: nowrap;
+}
+
+.dropdown-menu li a {
+    text-decoration: none;
+    font-size: 14px;
+    color: black;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-menu li a:hover {
+    color: #32a852;
+}
+
+/* Show Dropdown on Hover */
+.dropdown:hover .dropdown-menu {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(15px);
+
+}
+
+.dropdown:not(:hover) .dropdown-menu {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+/* Login Button Styling */
+.login {
+    flex: 1;
+    padding-left: 45px;
+    display: flex;
+    justify-content: start;
+}
+
+.login-button {
+    width: 120px;
+    padding: 8px 15px;
+    background-color: #4DA167;
+    color: white;
+    font-size: 14px;
+    border: 2px solid #4DA167;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Arial', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: white;
+    color: #32a852;
+    border: 2px solid #32a852;
+}
+.login-button a{
+    color: inherit;
+    text-decoration: none;
+}
+.login-button:visited{
+    color: inherit;
+}
+
+
+.body{
+    display: flex;
+    justify-content: center;
+}
+.main{
+    max-width: 80vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    padding-top: 50px;
+}
+.title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "inter",sans-serif;
+}
+.headers{
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.headers a{
+    text-decoration: none;
+}
+
+#career{
+    color: #6abaaf;
+    font-family: "poppins",sans-serif;
+    font-weight: 500;
+    font-size: 30px;
+    text-decoration: underline;
+    text-underline-offset: 5px; 
+}
+#company, #team{
+    color: #466876;
+    font-family: "poppins",sans-serif;
+    font-weight: 500;
+    font-size: 30px;
+}
+#team{
+    margin-left: -25px;
+}
+/* .headers a:visited {
+    color: inherit;
+} */
+
+
+.content{
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding-bottom: 50px;
+}
+.content h1, .content h3,.content p{
+    text-align: center;
+}
+.content h1{
+    font-family: "poppins",sans-serif;
+    color: #6abaaf;
+    font-size: 40px;
+    font-weight: 600;
+}
+.content h3{
+    font-family: "inter",sans-serif;
+    color: #466876;
+    font-size: 35px;
+    word-spacing: 5px;
+    letter-spacing: 1px;
+}
+.content p{
+    padding: 20px;
+    font-size: 20px;
+    font-family: "inter",sans-serif;
+    font-weight: 350;
+    line-height: 30px;
+    word-spacing: 2px;
+}
+#join{
+    text-decoration: none;
+    color: white;
+}
+#join:visited{
+    color: inherit;
+}
+.button-team button{
+    width: 13vw;
+    height: 8vh;
+    border:2px solid #6abaaf;
+    border-radius: 10px;
+    background-color: #6abaaf;
+    color: white;
+    transition-duration: .5s ;
+}
+.button-team button:hover{
+    background-color: white;
+    color: #6abaaf;
+    cursor: pointer;
+}
+
+
+
+footer{
+    padding-top: 20px;
+    padding-left: 80px;
+    height: 35vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr .75fr 1fr .75fr;
+    background-color: #e8ebe0;
+}
+.foot-logo{
+    padding-top: 30px;
+    height: 100%;
+    display: flex;
+    align-items: start  ;
+    justify-content: center;
+}
+.foot-logo img{
+    height: 20vh;
+}
+
+.fsection-2,.sub{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.sub{
+    gap: 10px;
+}
+footer h3,footer h2{
+    font-family: "blinker",sans-serif;
+    letter-spacing: 0.5px;
+    color: #6abaaf;
+}
+footer p{
+    color: black;
+}
+.fsection-2{
+    font-family:"Inter",sans-serif;
+}
+.fsection-3{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.quick-p{
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 17px;
+}
+.quick-p a{
+    text-decoration: none;
+    color: inherit;
+    font-family:"Inter",sans-serif;
+}
+.quick-p:visited{
+    color: inherit;
+}
+.followus{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.social{
+    display: flex;
+    gap: 10px;
+}
+.social img{
+    height: 25px;
+}
+.quick a:visited{
+    color: inherit;
+    text-decoration: none;
+}
+
+.hide-header {
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+@media (max-width:450px) {
+    header{
+        width: 100vw;
+        display: grid;
+        grid-template-columns: 1fr 4fr 1fr;
+        padding: 5px 10px;
+        transition: all 0.3s ease;
+    }
+    .logo{
+        padding-left:0px;
+    }
+    #head-logo{
+        width: 60px;
+    }
+    .nav-options {
+        width: 63vw;
+        gap: 10px;
+    }
+    .nav-options a {
+        font-size: 10px;
+        padding: 5px 5px;
+        transition: all 0.3s ease;
+    }
+    .dropdown-menu li a {
+        font-size: 10px;
+    }
+    .login {
+        padding-left: 5px;
+    }
+    .login-button {
+        width: 60px;
+        padding: 8px 15px;
+        font-size: 10px;
+        white-space: nowrap;
+    }
+
+    .main{
+        gap: 20px;
+        padding-top: 20px;
+        padding-bottom: 80px;
+    }
+    .title{
+        font-size: 12px;
+        padding-bottom: 10px;
+    }
+    .headers{
+        padding-bottom: 10px;
+    }
+    #company{
+        font-size: 12px;
+    }
+    #team, #career{
+        font-size: 12px;
+    }
+    #team{
+        margin-left: 0px;
+    }
+    .content{
+        padding-top: 15px;
+        gap: 10px;
+    }
+    .content h1{
+        font-size: 20px;
+        font-weight: 600;
+        letter-spacing: .5px;
+    }
+    .content h3{
+        font-size: 20px;
+        word-spacing: 2px;
+        letter-spacing: .5px;
+    }
+    .content p{
+        padding: 10px;
+        font-size: 10px;
+        font-weight: 350;
+        line-height: 20px;
+        word-spacing: 2px;
+        text-align: center;
+    }
+    .button-team button{
+        width: 20vw;
+        height: 5vh;
+        font-size: 8px;
+    }
+
+
+    /*footer*/
+    footer{
+        padding: 10px;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 1fr 0fr ;
+        gap:10px;
+    }
+    .foot-logo{
+        padding-top: 0px;
+        display: flex;
+        justify-content: start;
+    }
+    .foot-logo img{
+        height: 8vh;
+    }
+    .fsection-2,.sub{
+        gap: 10px;
+    }
+    .sub{
+        gap: 0px;
+    }
+    footer h3{
+        font-size: 15px;
+    }
+    footer p{
+        font-size: 12px;
+    }
+    .social img{
+        height: 2vh;
+    }
+    .hide-header {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
