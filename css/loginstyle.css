@@ -145,3 +145,34 @@ button:hover {
     text-align: end;
 }
 
+@media (max-width: 600px) {
+    .overall-container {
+      flex-direction: column;
+    }
+
+    .left-container{
+        width: 100%;
+    }
+
+    .logo img{
+        width: 25vw;
+    }
+
+    .right-container{
+        display: none;
+    }
+
+    .video-container{
+        display: flex;
+        justify-content: center;
+        align-items: end;
+    }
+
+    #bg-video{
+        top: auto;
+        left: auto;
+        transform: translate(0%,20%);
+        height: 100vh;
+        width: 100vw;
+    }
+  }
